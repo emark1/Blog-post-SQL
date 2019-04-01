@@ -1,0 +1,37 @@
+<html>
+<head></head>
+
+<body>
+
+<h1>Posts</h1>
+
+<ul>
+{{#posts}}
+
+<li>
+  <div>
+  {{title}}
+  </div>
+  <p>
+  {{body}}
+  </p>
+  <p>
+  {{postid}}
+  </p>
+  <form action="/delete-post" method="POST">
+    <input type="hidden" name="postId" value="{{postid}}" />
+    <button type="submit">Delete</button>
+  </form>
+    <form action="/edit-post" method="POST">
+        <input type="text" name="bodyupdate" placeholder="{{body}}" />
+        <input type="hidden" name="postId" value="{{postid}}" />
+        <button type="submit">Save Edit</button>
+    </form>
+</li>
+
+{{/posts}}
+</ul>
+
+</body>
+
+</html>
